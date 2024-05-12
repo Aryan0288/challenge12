@@ -1,5 +1,45 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
+<div class="w-10/12 m-auto">
+  <div class="flex flex-col justify-center mt-16 ml-10" *ngIf="userData">
+    <div class="flex gap-6 ">
+      <div class="flex items-center gap-12">
+        <img class="rounded-full w-44" src={{userData.avatar_url}} />
+      </div>
+      <div>
+        <p class=" text-xl">{{ userData.name }}</p>
+        <p class=" text-xl">{{ userData.bio }}</p>
+        <p class=" text-xl">{{ userData.location }}</p>
+        <p class=" text-xl">Twitter: {{ userData.twitter_username}}</p>
+      </div>
+    </div>
+    <div>
+      <p>url: {{userData.html_url}}</p>
+    </div>
   </div>
+
+
+  <!-- set all repo -->
+  <div class=" grid grid-cols-2 justify-between m-auto">
+    <div class="" *ngFor="let repo of repoData">
+      <div class="border-2 border-slate-700 m-8 p-2 pl-3 w-[90%]">
+        <p class="text-sky-500 text-xl capitalize font-semibold mb-1">{{repo.name}}</p>
+        <p class="font-normal capitalize mb-1">{{repo.description || "description not available"}}</p>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- {{repoLanguageData}} -->
+  <h2>repoLanguageData</h2>
+  <div *ngFor="let lang of repoLanguageData">
+    <p>{{lang.name}}</p>
+  </div>
+
+
+  <!-- https://fyleuniverse.notion.site/Fyle-Frontend-development-challenge-cb5085e5e0864e769e7b98c694400aaa -->
 </div>
+
+
+
+
+
+
